@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #000;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+p {
+  margin: 0 0 1.2em;
+}
+
+ul {
+  margin: 0 0 1.2em;
+  padding-left: 1.4em;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+/* ---------- Landing (index.html) ---------- */
+
+.landing {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px 16px;
+}
+
+.about {
+  width: 447px;
+}
+
+.about ul {
+  margin-top: -1.2em; /* list sits directly under "Some of my interests:" */
+}
+
+.project-list {
+  width: 202px;
+  align-self: flex-start;
+  
+}
+
+.project-list p {
+  padding-bottom: 8px;
+  margin: 0;
+}
+
+/* Keep the two columns top-aligned with each other */
+.landing-columns {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+/* ---------- Project pages (projects/*.html) ---------- */
+
+.project {
+  max-width: 1020px;
+  padding: 122px 16px 80px 78px;
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+
+.project h1 {
+  margin: 0;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.project h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.project-info {
+  display: flex;
+  gap: 31px;
+  color: #3d3b3b;
+  font-size: 15px;
+}
+
+.project-info > * {
+  width: 425px;
+}
+
+.project-info p,
+.project-info ul {
+  margin: 0;
+}
+
+.showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Grey squares are placeholders. Swap a <div> for <img src="..." alt="..."> */
+.showcase > * {
+  width: 213px;
+  height: 213px;
+  background: #d9d9d9;
+  object-fit: cover;
+}
+
+.back {
+  position: absolute;
+  top: 40px;
+  left: 78px;
+  font-size: 15px;
+}
+
+/* ---------- Phones ---------- */
+
+@media (max-width: 720px) {
+  .landing-columns,
+  .project-info {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about,
+  .project-list,
+  .project-info > * {
+    width: 100%;
+  }
+
+  .project {
+    padding: 100px 16px 60px;
+  }
+
+  .project h1 {
+    font-size: 36px;
+  }
+
+  .back {
+    left: 16px;
+  }
+
+  .showcase > * {
+    width: calc(50% - 15px);
+    height: auto;
+    aspect-ratio: 1;
+  }
+}
+
+.project-info .repo {
+  margin-top: 12px;
+}
+
+/* ---------- README (rendered from projects/readmes/*.md) ---------- */
+
+.readme {
+  max-width: 880px;
+  color: #3d3b3b;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.readme h1,
+.readme h2 {
+  color: #000;
+  font-size: 30px;
+  margin: 1em 0 0.5em;
+}
+
+.readme h3 {
+  color: #000;
+  font-size: 20px;
+  margin: 1em 0 0.5em;
+}
+
+.readme > :first-child {
+  margin-top: 0;
+}
+
+.readme img {
+  max-width: 100%;
+}
+
+.readme code {
+  background: #f0f0f0;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.readme pre {
+  background: #f0f0f0;
+  padding: 12px 16px;
+  overflow-x: auto;
+}
+
+.readme pre code {
+  background: none;
+  padding: 0;
+}
